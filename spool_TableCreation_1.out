@@ -1,0 +1,90 @@
+mysql> source D:\DB1\TableCreation.txt
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected (0.44 sec)
+
+Query OK, 0 rows affected (0.37 sec)
+
+Query OK, 0 rows affected (0.35 sec)
+
+Query OK, 0 rows affected (0.32 sec)
+
+Query OK, 0 rows affected (0.29 sec)
+
+Country Table Description:
++--------------------+---------------+------+-----+---------+-------+
+| Field              | Type          | Null | Key | Default | Extra |
++--------------------+---------------+------+-----+---------+-------+
+| Country_Name       | varchar(20)   | NO   | PRI | NULL    |       |
+| Population         | decimal(10,2) | YES  |     | NULL    |       |
+| No_of_Worldcup_won | int(11)       | YES  |     | NULL    |       |
+| Manager            | varchar(20)   | YES  |     | NULL    |       |
++--------------------+---------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+
+
+Players Table Description:
++------------------+----------------------+------+-----+---------+-------+
+| Field            | Type                 | Null | Key | Default | Extra |
++------------------+----------------------+------+-----+---------+-------+
+| Player_id        | int(11)              | NO   | PRI | NULL    |       |
+| Name             | varchar(40)          | YES  |     | NULL    |       |
+| Fname            | varchar(20)          | YES  |     | NULL    |       |
+| Lname            | varchar(35)          | YES  |     | NULL    |       |
+| DOB              | date                 | YES  |     | NULL    |       |
+| Country          | varchar(20)          | YES  | MUL | NULL    |       |
+| Height           | int(11)              | YES  |     | NULL    |       |
+| Club             | varchar(30)          | YES  |     | NULL    |       |
+| Position         | varchar(10)          | YES  |     | NULL    |       |
+| Caps_for_Country | int(11)              | YES  |     | NULL    |       |
+| IS_CAPTAIN       | enum('FALSE','TRUE') | YES  |     | NULL    |       |
++------------------+----------------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+
+
+Match_Results Table Description:
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| Match_id            | int(11)     | NO   | PRI | NULL    |       |
+| Date_of_Match       | date        | YES  |     | NULL    |       |
+| Start_Time_Of_Match | time        | YES  |     | NULL    |       |
+| Team1               | varchar(20) | YES  | MUL | NULL    |       |
+| Team2               | varchar(20) | YES  | MUL | NULL    |       |
+| Team1_score         | int(11)     | YES  |     | NULL    |       |
+| Team2_score         | int(11)     | YES  |     | NULL    |       |
+| Stadium_Name        | varchar(35) | YES  |     | NULL    |       |
+| Host_City           | varchar(20) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+
+
+Player_Cards Table Description:
++--------------+---------+------+-----+---------+-------+
+| Field        | Type    | Null | Key | Default | Extra |
++--------------+---------+------+-----+---------+-------+
+| Player_id    | int(11) | YES  | MUL | NULL    |       |
+| Yellow_Cards | int(11) | YES  |     | NULL    |       |
+| Red_Cards    | int(11) | YES  |     | NULL    |       |
++--------------+---------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
+
+Player_Assists_Goals Table Description:
++----------------+---------+------+-----+---------+-------+
+| Field          | Type    | Null | Key | Default | Extra |
++----------------+---------+------+-----+---------+-------+
+| Player_id      | int(11) | YES  | MUL | NULL    |       |
+| No_of_Matches  | int(11) | YES  |     | NULL    |       |
+| Goals          | int(11) | YES  |     | NULL    |       |
+| Assists        | int(11) | YES  |     | NULL    |       |
+| Minutes_Played | int(11) | YES  |     | NULL    |       |
++----------------+---------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> notee

@@ -1,0 +1,27 @@
+insert into COUNTRY(Country_Name,Population,No_of_Worldcup_won,Manager) Values
+('Australia',25,0,'Perth');
+
+Insert into PLAYERS(Player_id,Name,Fname,Lname,DOB,Country,Height,Club,Position,Caps_for_Country,IS_CAPTAIN)
+values (12345,'ABDELMOUMENE DJABOU','ABDELMOUMENE','DJABOU','1987-01-31','Antartica',168,'Club Africain','Forward',7,'FALSE')
+
+;
+
+
+insert into COUNTRY(Country_Name,Population,No_of_Worldcup_won,Manager) Values
+(null,25,0,'Perth');
+
+delete from country where Country_Name='Australia';
+
+insert into COUNTRY(Country_Name,Population,No_of_Worldcup_won,Manager) Values
+('Newcountry1',10,0,'newcity1');
+
+
+
+Insert into PLAYERS(Player_id,Name,Fname,Lname,DOB,Country,Height,Club,Position,Caps_for_Country,IS_CAPTAIN)
+values (12345,'ABDELMOUMENE DJABOU','ABDELMOUMENE','DJABOU','1987-01-31','Newcountry1',168,'Club Africain','Forward',7,'FALSE')
+
+;
+
+Insert into MATCH_RESULTS(Match_id,Date_of_Match,Start_Time_Of_Match,Team1,Team2,Team1_score,Team2_score,Stadium_Name,Host_city) values
+(100,'2016-07-17','17:00:00','Newcountry1','Croatia',3,1,'Arena de Sao Paulo','Sao Paulo')
+

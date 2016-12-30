@@ -1,0 +1,20 @@
+Loading Data from CSV file to the tables in Soccer Database:
+------------------------------------------------------------
+
+mysql>  source d:\DB1\Loaddata_2.txt
+Query OK, 32 rows affected, 6 warnings (0.11 sec)
+Records: 32  Deleted: 0  Skipped: 0  Warnings: 6
+
+Query OK, 736 rows affected, 1840 warnings (0.46 sec)
+Records: 736  Deleted: 0  Skipped: 0  Warnings: 1840
+
+Query OK, 64 rows affected, 131 warnings (0.60 sec)
+Records: 64  Deleted: 0  Skipped: 0  Warnings: 131
+
+Query OK, 164 rows affected (0.13 sec)
+Records: 164  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 169 rows affected (0.13 sec)
+Records: 169  Deleted: 0  Skipped: 0  Warnings: 0
+
+mysql> notee

@@ -1,0 +1,38 @@
+use SOCCER;
+select Name,Position,Club,Caps_for_Country from SOCCER.players where Country='Germany';
+
+select Country_Name from soccer.country where No_of_Worldcup_won>0;
+
+select Country_Name from soccer.country where No_of_Worldcup_won=0;
+
+select Name,Country from PLAYERS where PLAYERS.Player_Id in (select Player_Id from PLAYER_CARDS where 
+Yellow_Cards=(select max(Yellow_Cards) from PLAYER_CARDS));
+
+select Host_City,count(Host_City) as 'Total games' from MATCH_RESULTS group by Host_city;
+
+select Team1 'Country Name', count(Team1) as 'No Games Played' ,sum(Team1_score) as 'Total Goals Scored', sum(Team2_score) as 'Goals Against'  FROM soccer.match_results group by Team1;
+
+select Team2 'Country Name', count(Team2) as 'No Games Played' ,sum(Team2_score) as 'Total Goals Scored', sum(Team1_score) as 'Goals Against'  FROM soccer.match_results group by Team2;
+
+create view TEAM_SUMMARY as 
+select a.Team1 as 'Country Name',sum(a.aa+b.bb) as NoofGames, sum(a.gf+b.gf) as 'Total Goals For',sum(a.ga+b.ga) as 'Total Goals Against'   from
+(select count(Team1) as aa, Team1,sum(Team1_score) as gf,sum(Team2_score) as ga FROM soccer.match_results group by Team1) a,
+(select count(Team2) as bb,Team2,sum(Team2_score) as gf,sum(Team1_score) as ga FROM soccer.match_results group by Team2) b 
+where a.Team1=b.Team2 group by Team1 order by NoofGames desc;
+
+SELECT `team_summary`.`Country Name`,
+    `team_summary`.`NoofGames`,
+    `team_summary`.`Total Goals For`,
+    `team_summary`.`Total Goals Against`
+FROM `soccer`.`team_summary`;
+
+select * from MATCH_RESULTS where Team1='USA' or Team2='USA';
+
+select b.Name,b.Country as 'Players Country', a.Goals as 'No of Goals' from 
+PLAYER_ASSISTS_GOALS a,PLAYERS b where a.Player_id=b.Player_id and a.Goals>0 order by a.Goals desc;
+
+
+select b.Name,b.Country as 'Players Country', a.Goals as 'No of Goals' from 
+PLAYER_ASSISTS_GOALS a,PLAYERS b where a.Player_id=b.Player_id and a.Goals>2 order by a.Goals desc;
+
+select Country_Name as 'Participating Countries',Population from country order by Population desc;

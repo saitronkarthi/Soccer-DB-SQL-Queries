@@ -1,0 +1,27 @@
+mysql> source D:\DB1\Insert_Violation_4.txt
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+Connection id:    19
+Current database: SOCCER
+
+1.Key Violation:
+ERROR 1062 (23000): Duplicate entry 'Australia' for key 'PRIMARY'
+
+2.Referential Integrity Constraint Violation-Insert:
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`soccer`.`players`, CONSTRAINT `FK_COUNTRYNAME` FOREIGN KEY (`Country`) REFERENCES `country` (`Country_Name`))
+
+3.Entity Integrity Constraint Violation:
+ERROR 1048 (23000): Column 'Country_Name' cannot be null
+
+4.Referential Integrity Constraint Violation- Delete:
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`soccer`.`players`, CONSTRAINT `FK_COUNTRYNAME` FOREIGN KEY (`Country`) REFERENCES `country` (`Country_Name`))
+
+
+5.3 Records Inserted without violation:
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.17 sec)
+
+Query OK, 1 row affected (0.04 sec)
+
+mysql> notee

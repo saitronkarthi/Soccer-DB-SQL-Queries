@@ -1,0 +1,434 @@
+mysql> source D:\DB1\queries.txt
+
+1.Retrieve the name, position, club, and Caps_for_Country for the players whose country is ‘Germany’
+
++------------------------+------------+---------------------------+------------------+
+| Name                   | Position   | Club                      | Caps_for_Country |
++------------------------+------------+---------------------------+------------------+
+| MIROSLAV KLOSE         | Forward    | SS Lazio                  |              131 |
+| ROMAN WEIDENFELLER     | Goalkeeper | Borussia Dortmund         |                2 |
+| PHILIPP LAHM           | Midfielder | FC Bayern Muenchen        |              105 |
+| BASTIAN SCHWEINSTEIGER | Midfielder | FC Bayern Muenchen        |              101 |
+| LUKAS PODOLSKI         | Forward    | Arsenal FC                |              113 |
+| SAMI KHEDIRA           | Midfielder | Real Madrid CF            |               45 |
+| PER MERTESACKER        | Defender   | Arsenal FC                |               97 |
+| MANUEL NEUER           | Goalkeeper | FC Bayern Muenchen        |               45 |
+| TONI KROOS             | Midfielder | FC Bayern Muenchen        |               43 |
+| JEROME BOATENG         | Defender   | FC Bayern Muenchen        |               38 |
+| RON-ROBERT ZIELER      | Goalkeeper | Hannover 96               |                3 |
+| MESUT OEZIL            | Midfielder | Arsenal FC                |               54 |
+| ANDRE SCHUERRLE        | Forward    | Chelsea FC                |               32 |
+| MARIO GOETZE           | Forward    | FC Bayern Muenchen        |               28 |
+| BENEDIKT HOEWEDES      | Defender   | FC Schalke 04             |               20 |
+| MATS HUMMELS           | Defender   | Borussia Dortmund         |               29 |
+| THOMAS MUELLER         | Forward    | FC Bayern Muenchen        |               48 |
+| MARCO REUS             | Forward    | Borussia Dortmund         |               20 |
+| JULIAN DRAXLER         | Midfielder | FC Schalke 04             |               11 |
+| KEVIN GROSSKREUTZ      | Defender   | Borussia Dortmund         |                4 |
+| MATTHIAS GINTER        | Defender   | SC Freiburg               |                2 |
+| ERIK DURM              | Defender   | Borussia Dortmund         |                1 |
+| CHRISTOPH KRAMER       | Midfielder | Borussia Moenchengladbach |                2 |
++------------------------+------------+---------------------------+------------------+
+23 rows in set (0.06 sec)
+
+
+2.Retrieve the names of countries participating in the 2014 world cup (Soccer database) that have won the world cup at least once.
++--------------+
+| Country_Name |
++--------------+
+| Argentina    |
+| Brazil       |
+| England      |
+| France       |
+| Germany      |
+| Italy        |
+| Spain        |
+| Uruguay      |
++--------------+
+8 rows in set (0.00 sec)
+
+
+3.Retrieve the names of countries participating in the 2014 world cup (this database) that have never won the world cup.
++----------------------+
+| Country_Name         |
++----------------------+
+| Algeria              |
+| Australia            |
+| Belgium              |
+| Bosnia & Herzegovina |
+| Cameroon             |
+| Chile                |
+| Columbia             |
+| Costa Rica           |
+| Croatia              |
+| Ecuador              |
+| Ghana                |
+| Greece               |
+| Honduras             |
+| Iran                 |
+| Ivory Coast          |
+| Japan                |
+| Mexico               |
+| Netherlands          |
+| Nigeria              |
+| Portugal             |
+| Russia               |
+| South Korea          |
+| Switzerland          |
+| USA                  |
++----------------------+
+24 rows in set (0.00 sec)
+
+
+
+4.Retrieve the name and country of the player with the most yellow cards in the 2014 world cup.
++--------------------------+----------------------+
+| Name                     | Country              |
++--------------------------+----------------------+
+| KONSTANTINOS KATSOURANIS | Greece               |
+| VEDAD IBISEVIC           | Bosnia & Herzegovina |
+| THIAGO SILVA             | Brazil               |
++--------------------------+----------------------+
+3 rows in set (0.00 sec)
+
+
+
+5.For each Host city, retrieve the HostCity and the total number of games played in that city.
++----------------+-------------+
+| Host_City      | Total games |
++----------------+-------------+
+| Belo Horizonte |           6 |
+| Brasilia       |           7 |
+| Cuiaba         |           4 |
+| Curitiba       |           4 |
+| Fortaleza      |           6 |
+| Manaus         |           4 |
+| Natal          |           4 |
+| Porto Alegre   |           5 |
+| Recife         |           5 |
+| Rio De Janerio |           7 |
+| Salvador       |           6 |
+| Sao Paulo      |           6 |
++----------------+-------------+
+12 rows in set (0.00 sec)
+
+
+
+6.For each country, retrieve the country name and the number of games they played as Team1 in the MATCH_RESULTS table, and the total goals scored (SUM of Team1_score) and the goals against (SUM of Team2_score).
++----------------------+-----------------+--------------------+---------------+
+| Country Name         | No Games Played | Total Goals Scored | Goals Against |
++----------------------+-----------------+--------------------+---------------+
+| Algeria              |               1 |                  1 |             1 |
+| Argentina            |               4 |                  5 |             1 |
+| Australia            |               2 |                  2 |             6 |
+| Belgium              |               3 |                  5 |             2 |
+| Bosnia & Herzegovina |               1 |                  3 |             1 |
+| Brazil               |               6 |                  7 |            13 |
+| Cameroon             |               2 |                  1 |             8 |
+| Chile                |               1 |                  3 |             1 |
+| Columbia             |               3 |                  7 |             1 |
+| Costa Rica           |               2 |                  1 |             1 |
+| Croatia              |               1 |                  1 |             3 |
+| Ecuador              |               1 |                  0 |             0 |
+| England              |               1 |                  1 |             2 |
+| France               |               3 |                  5 |             1 |
+| Germany              |               4 |                  9 |             3 |
+| Ghana                |               1 |                  1 |             2 |
+| Greece               |               1 |                  2 |             1 |
+| Honduras             |               2 |                  1 |             5 |
+| Iran                 |               1 |                  0 |             0 |
+| Italy                |               2 |                  0 |             2 |
+| Ivory Coast          |               1 |                  2 |             1 |
+| Japan                |               2 |                  1 |             4 |
+| Mexico               |               1 |                  1 |             0 |
+| Netherlands          |               4 |                  4 |             1 |
+| Nigeria              |               2 |                  3 |             3 |
+| Portugal             |               1 |                  2 |             1 |
+| Russia               |               1 |                  1 |             1 |
+| South Korea          |               2 |                  2 |             5 |
+| Spain                |               2 |                  1 |             7 |
+| Switzerland          |               2 |                  4 |             6 |
+| Uruguay              |               2 |                  3 |             4 |
+| USA                  |               2 |                  2 |             3 |
++----------------------+-----------------+--------------------+---------------+
+32 rows in set (0.00 sec)
+
+
+
+7.For each country, retrieve the country name and the number of games they played as Team2 in the MATCH_RESULTS table, and the total goals scored (SUM of Team12_score) and the goals against (SUM of Team1_score)
++----------------------+-----------------+--------------------+---------------+
+| Country Name         | No Games Played | Total Goals Scored | Goals Against |
++----------------------+-----------------+--------------------+---------------+
+| Algeria              |               3 |                  6 |             6 |
+| Argentina            |               3 |                  3 |             3 |
+| Australia            |               1 |                  1 |             3 |
+| Belgium              |               2 |                  1 |             1 |
+| Bosnia & Herzegovina |               2 |                  1 |             3 |
+| Brazil               |               1 |                  4 |             1 |
+| Cameroon             |               1 |                  0 |             1 |
+| Chile                |               3 |                  3 |             3 |
+| Columbia             |               2 |                  5 |             3 |
+| Costa Rica           |               3 |                  4 |             1 |
+| Croatia              |               2 |                  5 |             3 |
+| Ecuador              |               2 |                  3 |             3 |
+| England              |               2 |                  1 |             2 |
+| France               |               2 |                  5 |             2 |
+| Germany              |               3 |                  9 |             1 |
+| Ghana                |               2 |                  3 |             4 |
+| Greece               |               3 |                  1 |             4 |
+| Honduras             |               1 |                  0 |             3 |
+| Iran                 |               2 |                  1 |             4 |
+| Italy                |               1 |                  2 |             1 |
+| Ivory Coast          |               2 |                  2 |             4 |
+| Japan                |               1 |                  1 |             2 |
+| Mexico               |               3 |                  4 |             3 |
+| Netherlands          |               3 |                 11 |             3 |
+| Nigeria              |               2 |                  0 |             2 |
+| Portugal             |               2 |                  2 |             6 |
+| Russia               |               2 |                  1 |             2 |
+| South Korea          |               1 |                  1 |             1 |
+| Spain                |               1 |                  3 |             0 |
+| Switzerland          |               2 |                  3 |             1 |
+| Uruguay              |               2 |                  1 |             2 |
+| USA                  |               2 |                  3 |             3 |
++----------------------+-----------------+--------------------+---------------+
+32 rows in set (0.00 sec)
+
+
+
+8.Create a view TEAM_SUMMARY that has the following data attributes to hold the result of the combined query: CountryName, NoOfGames, TotalGoalsFor, TotalGoalsAgainst. Order in descending order of number of games played.
+Query OK, 0 rows affected (0.07 sec)
+
++----------------------+-----------+-----------------+---------------------+
+| Country Name         | NoofGames | Total Goals For | Total Goals Against |
++----------------------+-----------+-----------------+---------------------+
+| Germany              |         7 |              18 |                   4 |
+| Argentina            |         7 |               8 |                   4 |
+| Netherlands          |         7 |              15 |                   4 |
+| Brazil               |         7 |              11 |                  14 |
+| Costa Rica           |         5 |               5 |                   2 |
+| France               |         5 |              10 |                   3 |
+| Columbia             |         5 |              12 |                   4 |
+| Belgium              |         5 |               6 |                   3 |
+| USA                  |         4 |               5 |                   6 |
+| Greece               |         4 |               3 |                   5 |
+| Uruguay              |         4 |               4 |                   6 |
+| Croatia              |         4 |               7 |                   9 |
+| Algeria              |         4 |               7 |                   7 |
+| Mexico               |         4 |               5 |                   3 |
+| Chile                |         4 |               6 |                   4 |
+| Switzerland          |         4 |               7 |                   7 |
+| Nigeria              |         4 |               3 |                   5 |
+| Bosnia & Herzegovina |         3 |               4 |                   4 |
+| Russia               |         3 |               2 |                   3 |
+| Japan                |         3 |               2 |                   6 |
+| Ecuador              |         3 |               3 |                   3 |
+| Cameroon             |         3 |               1 |                   9 |
+| Spain                |         3 |               4 |                   7 |
+| Iran                 |         3 |               1 |                   4 |
+| Portugal             |         3 |               4 |                   7 |
+| Ivory Coast          |         3 |               4 |                   5 |
+| Ghana                |         3 |               4 |                   6 |
+| South Korea          |         3 |               3 |                   6 |
+| Honduras             |         3 |               1 |                   8 |
+| England              |         3 |               2 |                   4 |
+| Australia            |         3 |               3 |                   9 |
+| Italy                |         3 |               2 |                   3 |
++----------------------+-----------+-----------------+---------------------+
+32 rows in set (0.00 sec)
+
+
+
+9.Find all the matches played with country ‘USA’ as Team1 or Team2.
++----------+---------------+---------------------+---------+----------+-------------+-------------+-------------------+-----------+
+| Match_id | Date_of_Match | Start_Time_Of_Match | Team1   | Team2    | Team1_score | Team2_score | Stadium_Name      | Host_City |
++----------+---------------+---------------------+---------+----------+-------------+-------------+-------------------+-----------+
+|       14 | 2014-06-16    | 19:00:00            | Ghana   | USA      |           1 |           2 | Estadio das Dunas | Natal     |
+|       30 | 2014-06-22    | 18:00:00            | USA     | Portugal |           2 |           2 | Arena Amazonia    | Manaus    |
+|       45 | 2014-06-26    | 13:00:00            | USA     | Germany  |           0 |           1 | Arena Pernamuco   | Recife    |
+|       56 | 2014-07-01    | 17:00:00            | Belgium | USA      |           2 |           1 | Arena Fonte Nova  | Salvador  |
++----------+---------------+---------------------+---------+----------+-------------+-------------+-------------------+-----------+
+4 rows in set (0.00 sec)
+
+
+10.Retrieve the names of the players who have scored at least one goal, the player’s country, and the number of goals each player scored. Order the result by number of goals scored in descending order.
++---------------------------+----------------------+-------------+
+| Name                      | Players Country      | No of Goals |
++---------------------------+----------------------+-------------+
+| JAMES RODRIGUEZ           | Columbia             |           6 |
+| THOMAS MUELLER            | Germany              |           5 |
+| NEYMAR SANTOS JR.         | Brazil               |           4 |
+| ROBIN VAN PERSIE          | Netherlands          |           4 |
+| LIONEL MESSI              | Argentina            |           4 |
+| ANDRE SCHUERRLE           | Germany              |           3 |
+| ENNER VALENCIA            | Ecuador              |           3 |
+| XHERDAN SHAQIRI           | Switzerland          |           3 |
+| KARIM BENZEMA             | France               |           3 |
+| ARJEN ROBBEN              | Netherlands          |           3 |
+| TIM CAHILL                | Australia            |           2 |
+| WILFRIED BONY             | Ivory Coast          |           2 |
+| MEMPHIS DEPAY             | Netherlands          |           2 |
+| LUIS SUAREZ               | Uruguay              |           2 |
+| MARIO MANDZUKIC           | Croatia              |           2 |
+| JACKSON MARTINEZ          | Columbia             |           2 |
+| MARIO GOETZE              | Germany              |           2 |
+| IVAN PERISIC              | Croatia              |           2 |
+| ANDRE AYEW                | Ghana                |           2 |
+| GERVINHO YAO KOUASSI      | Ivory Coast          |           2 |
+| ASAMOAH GYAN              | Ghana                |           2 |
+| MIROSLAV KLOSE            | Germany              |           2 |
+| ISLAM SLIMANI             | Algeria              |           2 |
+| AHMED MUSA                | Nigeria              |           2 |
+| CLINT DEMPSEY             | USA                  |           2 |
+| ALEXIS SANCHEZ            | Chile                |           2 |
+| BRYAN RUIZ                | Costa Rica           |           2 |
+| MATS HUMMELS              | Germany              |           2 |
+| OSCAR DOS SANTOS JR.      | Brazil               |           2 |
+| DAVID LUIZ                | Brazil               |           2 |
+| TONI KROOS                | Germany              |           2 |
+| JULIAN GREEN              | USA                  |           1 |
+| LEROY FER                 | Netherlands          |           1 |
+| OGNJEN VRANJES            | Bosnia & Herzegovina |           1 |
+| JUAN MATA                 | Spain                |           1 |
+| JOHN BROOKS               | USA                  |           1 |
+| VARELA SILVESTRE          | Portugal             |           1 |
+| KLAAS JAN HUNTELAAR       | Netherlands          |           1 |
+| BLERIM DZEMAILI           | Switzerland          |           1 |
+| DAVID VILLA               | Spain                |           1 |
+| JEAN BEAUSEJOUR           | Chile                |           1 |
+| JAVIER HERNANDEZ          | Mexico               |           1 |
+| JUAN QUINTERO             | Columbia             |           1 |
+| JORGE VALDIVIA            | Chile                |           1 |
+| ALEKSANDR KERZHAKOV       | Russia               |           1 |
+| MARCOS URENA              | Costa Rica           |           1 |
+| LEE KEUNHO                | South Korea          |           1 |
+| ANDREAS SAMARIS           | Greece               |           1 |
+| HARIS SEFEROVIC           | Switzerland          |           1 |
+| FERNANDO TORRES           | Spain                |           1 |
+| VEDAD IBISEVIC            | Bosnia & Herzegovina |           1 |
+| WAYNE ROONEY              | England              |           1 |
+| OLIVIER GIROUD            | France               |           1 |
+| CLAUDIO MARCHISIO         | Italy                |           1 |
+| ROMELU LUKAKU             | Belgium              |           1 |
+| JOEL MATIP                | Cameroon             |           1 |
+| YACINE BRAHIMI            | Algeria              |           1 |
+| XABI ALONSO               | Spain                |           1 |
+| MARIO BALOTELLI           | Italy                |           1 |
+| MOUSSA SISSOKO            | France               |           1 |
+| CARLO COSTLY              | Honduras             |           1 |
+| IVICA OLIC                | Croatia              |           1 |
+| DIVOCK ORIGI              | Belgium              |           1 |
+| SON HEUNGMIN              | South Korea          |           1 |
+| SHINJI OKAZAKI            | Japan                |           1 |
+| DANIEL STURRIDGE          | England              |           1 |
+| EDIN DZEKO                | Bosnia & Herzegovina |           1 |
+| REZA GHOOCHANNEJAD        | Iran                 |           1 |
+| KEISUKE HONDA             | Japan                |           1 |
+| MILE JEDINAK              | Australia            |           1 |
+| ALEXANDER KOKORIN         | Russia               |           1 |
+| KOO JACHEOL               | South Korea          |           1 |
+| DRIES MERTENS             | Belgium              |           1 |
+| NANI DA CUNHA             | Portugal             |           1 |
+| MIRALEM PJANIC            | Bosnia & Herzegovina |           1 |
+| CRISTIANO RONALDO         | Portugal             |           1 |
+| GIOVANI DOS SANTOS        | Mexico               |           1 |
+| PETER ODEMWINGIE          | Nigeria              |           1 |
+| FERNANDINHO LUIZ ROZA     | Brazil               |           1 |
+| ORIBE PERALTA             | Mexico               |           1 |
+| TEOFILO GUTIERREZ         | Columbia             |           1 |
+| EDUARDO VARGAS            | Chile                |           1 |
+| GRANIT XHAKA              | Switzerland          |           1 |
+| ANDRES GUARDADO           | Mexico               |           1 |
+| MATHIEU VALBUENA          | France               |           1 |
+| OSCAR DUARTE              | Costa Rica           |           1 |
+| ADMIR MEHMEDI             | Switzerland          |           1 |
+| PAUL POGBA                | France               |           1 |
+| RAFAEL MARQUEZ            | Mexico               |           1 |
+| EDINSON CAVANI            | Uruguay              |           1 |
+| DIEGO GODIN               | Uruguay              |           1 |
+| CHARLES ARANGUIZ          | Chile                |           1 |
+| RAFIK HALLICHE            | Algeria              |           1 |
+| SAMI KHEDIRA              | Germany              |           1 |
+| JUAN CUADRADO             | Columbia             |           1 |
+| KEVIN DE BRUYNE           | Belgium              |           1 |
+| SOFIANE FEGHOULI          | Algeria              |           1 |
+| JERMAINE JONES            | USA                  |           1 |
+| SOKRATIS PAPASTATHOPOULOS | Greece               |           1 |
+| GEORGIOS SAMARAS          | Greece               |           1 |
+| JOEL CAMPBELL             | Costa Rica           |           1 |
+| MAROUANE FELLAINI         | Belgium              |           1 |
+| PABLO ARMERO              | Columbia             |           1 |
+| ANGEL DI MARIA            | Argentina            |           1 |
+| BLAISE MATUIDI            | France               |           1 |
+| JAN VERTONGHEN            | Belgium              |           1 |
+| FRED CHAVES GUEDES        | Brazil               |           1 |
+| GEORGINIO WIJNALDUM       | Netherlands          |           1 |
+| THIAGO SILVA              | Brazil               |           1 |
+| GONZALO HIGUAIN           | Argentina            |           1 |
+| WESLEY SNEIJDER           | Netherlands          |           1 |
+| MARCOS ROJO               | Argentina            |           1 |
+| MESUT OEZIL               | Germany              |           1 |
+| DALEY BLIND               | Netherlands          |           1 |
+| STEFAN DE VRIJ            | Netherlands          |           1 |
++---------------------------+----------------------+-------------+
+115 rows in set (0.00 sec)
+
+
+
+11.Repeat 11. but only for the players who have more than 2 goals.
++-------------------+-----------------+-------------+
+| Name              | Players Country | No of Goals |
++-------------------+-----------------+-------------+
+| JAMES RODRIGUEZ   | Columbia        |           6 |
+| THOMAS MUELLER    | Germany         |           5 |
+| NEYMAR SANTOS JR. | Brazil          |           4 |
+| ROBIN VAN PERSIE  | Netherlands     |           4 |
+| LIONEL MESSI      | Argentina       |           4 |
+| ANDRE SCHUERRLE   | Germany         |           3 |
+| ENNER VALENCIA    | Ecuador         |           3 |
+| XHERDAN SHAQIRI   | Switzerland     |           3 |
+| KARIM BENZEMA     | France          |           3 |
+| ARJEN ROBBEN      | Netherlands     |           3 |
++-------------------+-----------------+-------------+
+10 rows in set (0.00 sec)
+
+
+12.Make a list of participating countries and their population, ordered in descending order of population.
++-------------------------+------------+
+| Participating Countries | Population |
++-------------------------+------------+
+| USA                     |     318.90 |
+| Brazil                  |     202.40 |
+| Nigeria                 |     173.60 |
+| Russia                  |     142.46 |
+| Japan                   |     127.06 |
+| Mexico                  |     122.30 |
+| Germany                 |      82.60 |
+| Iran                    |      77.97 |
+| France                  |      64.60 |
+| Italy                   |      61.07 |
+| England                 |      53.50 |
+| South Korea             |      50.42 |
+| Columbia                |      49.14 |
+| Spain                   |      47.10 |
+| Argentina               |      42.30 |
+| Algeria                 |      39.90 |
+| Ghana                   |      25.90 |
+| Australia               |      23.59 |
+| Cameroon                |      23.03 |
+| Ivory Coast             |      20.32 |
+| Chile                   |      17.62 |
+| Netherlands             |      16.90 |
+| Ecuador                 |      15.98 |
+| Belgium                 |      11.20 |
+| Greece                  |      11.20 |
+| Portugal                |      10.58 |
+| Honduras                |       8.09 |
+| Switzerland             |       8.00 |
+| Costa Rica              |       4.87 |
+| Croatia                 |       4.25 |
+| Bosnia & Herzegovina    |       3.83 |
+| Uruguay                 |       3.42 |
++-------------------------+------------+
+32 rows in set (0.00 sec)
+
